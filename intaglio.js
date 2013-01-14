@@ -71,5 +71,6 @@ var geomaps = [];
         for(var i = g.length-1; i >= 0; i--) {
             geomaps.push(new Geomap(g[i]));
         }
+        setTimeout(function() {geomaps[0].mapLocations()}, 1200); // another onload hack. it's presentation time.
     });
 })();
