@@ -63,15 +63,13 @@ var geomaps = [];
         // document.write('<link href="http://leaflet.cloudmade.com/dist/leaflet.css" media="all" rel="stylesheet" type="text/css" \/>');
         // document.write('<script src="http://leaflet.cloudmade.com/dist/leaflet.js" type="text/javascript"><\/script>');
         
-        // document.write ('<script type="text/javascript" charset="utf-8" src="https://raw.github.com/mapstraction/mxn/integration/source/mxn.js?(esri)"></script>');
-        document.write ('<script type="text/javascript" charset="utf-8" src="http://river.local/Projects/mapstraction/mxn/source/mxn.js?(esri)"></script>');
-        setTimeout(cb, 1000);
+        document.write ('<script type="text/javascript" charset="utf-8" src="https://raw.github.com/mapstraction/mxn/integration/source/mxn.js?(esri)"></script>');
+        setTimeout(cb, 1000); // hack for onload
     }
     var g = getElementsByClassName('chassis');
     loadProviders(["esri"], function() {
         for(var i = g.length-1; i >= 0; i--) {
             geomaps.push(new Geomap(g[i]));
-            setTimeout(geomaps[i].mapLocations,1000);
         }
     });
 })();
